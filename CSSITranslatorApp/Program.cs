@@ -1,4 +1,4 @@
-using CCSITranslatorApp;
+using CSSITranslatorApp;
 
 var builder = WebApplication.CreateBuilder(args);
 

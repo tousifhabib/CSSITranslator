@@ -1,6 +1,6 @@
 ﻿using Google.Cloud.Translate.V3;
 
-namespace CCSITranslatorApp.Utilities;
+namespace CSSITranslatorApp.Utilities;
 
 public class TranslationResponse
 {

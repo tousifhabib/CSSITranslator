@@ -1,4 +1,4 @@
-﻿namespace CCSITranslatorApp.Utilities;
+﻿namespace CSSITranslatorApp.Utilities;
 
 public class TranslationRequest
 {

@@ -30,3 +30,14 @@ be set to your project id which can be acquired from google cloud platform
     ```
 7. In the browser go navigate to `https://localhost:7116`
 8. The app should be started.
+
+## Starting The App In A Docker Container
+1. Navigate to the parent directory (where the .sln file is) and
+run the following command to create the image:
+```
+docker build -f .\CSSITranslatorApp\Dockerfile --force-rm -t cssitranslatorimage .
+```
+2. run the following command to create the container:
+```
+docker run -it -p 4242:80 --name cssitranslator cssitranslatorimage
+```

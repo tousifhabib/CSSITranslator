@@ -1,10 +1,10 @@
 ﻿using System.Collections;
-using CCSITranslatorApp.Utilities;
+using CSSITranslatorApp.Utilities;
 using Google.Api.Gax.ResourceNames;
 using Google.Cloud.Translate.V3;
 using Newtonsoft.Json;
 
-namespace CCSITranslatorApp;
+namespace CSSITranslatorApp;
 
 public interface ITranslator
 {

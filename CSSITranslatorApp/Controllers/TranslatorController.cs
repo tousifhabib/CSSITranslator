@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
-using CCSITranslatorApp.Utilities;
+using CSSITranslatorApp.Utilities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CCSITranslatorApp.Controllers;
+namespace CSSITranslatorApp.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

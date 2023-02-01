@@ -12,16 +12,16 @@ RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
-COPY ["CCSITranslatorApp/CCSITranslatorApp.csproj", "CCSITranslatorApp/"]
-RUN dotnet restore "CCSITranslatorApp/CCSITranslatorApp.csproj"
+COPY ["CSSITranslatorApp/CSSITranslatorApp.csproj", "CSSITranslatorApp/"]
+RUN dotnet restore "CSSITranslatorApp/CSSITranslatorApp.csproj"
 COPY . .
-WORKDIR "/src/CCSITranslatorApp"
-RUN dotnet build "CCSITranslatorApp.csproj" -c Release -o /app/build
+WORKDIR "/src/CSSITranslatorApp"
+RUN dotnet build "CSSITranslatorApp.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "CCSITranslatorApp.csproj" -c Release -o /app/publish
+RUN dotnet publish "CSSITranslatorApp.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "CCSITranslatorApp.dll"]
+ENTRYPOINT ["dotnet", "CSSITranslatorApp.dll"]
