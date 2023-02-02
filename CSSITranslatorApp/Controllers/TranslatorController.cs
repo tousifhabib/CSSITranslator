@@ -21,6 +21,7 @@ public class TranslatorController : ControllerBase
     [Route("languages")]
     public IActionResult Languages()
     {
+        _logger.LogInformation("Getting supported languages from Google Cloud Translate V3");
         var supportedLanguages = _translator.TranslationLanguages();
         return Content(JsonSerializer.Serialize(supportedLanguages));
     }
@@ -29,7 +30,7 @@ public class TranslatorController : ControllerBase
     [Route("translate")]
     public IActionResult Translate(TranslationRequest translationRequest)
     {
-        Console.WriteLine("REMOVE-ME POST");
+        _logger.LogInformation("Sending translation request to Google Cloud Translate V3");
         var translatedText = _translator.TranslateText(translationRequest);
         return Content(JsonSerializer.Serialize(translatedText));
     }
