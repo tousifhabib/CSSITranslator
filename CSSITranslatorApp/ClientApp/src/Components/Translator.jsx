@@ -1,4 +1,4 @@
-﻿import React, {FC, useEffect, useState} from 'react';
+﻿import React, {useEffect, useState} from 'react';
 import Grid from "@mui/material/Grid";
 import Select from '@mui/material/Select'
 import MenuItem from "@mui/material/MenuItem";
@@ -6,8 +6,8 @@ import InputLabel from "@mui/material/InputLabel";
 import TextField from "@mui/material/TextField";
 import CircularProgress from "@mui/material/CircularProgress";
 import Button from "@mui/material/Button";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLanguage } from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faLanguage} from '@fortawesome/free-solid-svg-icons'
 
 const Translator = () => {
 
@@ -17,7 +17,7 @@ const Translator = () => {
     const [outputText, setOutputText] = useState('');
     const [currentLanguage, setCurrentLanguage] = useState(null);
     const [inputLanguage, setInputLanguage] = useState(null);
-    const [outputLanguage, setoutputLanguage] = useState(null);
+    const [outputLanguage, setOutputLanguage] = useState(null);
     
     
     useEffect(() =>{
@@ -51,7 +51,7 @@ const Translator = () => {
         setInputLanguage(event.target.value);
     }
     const handleChangeTo = (event) => {
-        setoutputLanguage(event.target.value);
+        setOutputLanguage(event.target.value);
     }
     const handleInputTextChange = (event) => {
         setInputText(event.target.value);
@@ -78,12 +78,11 @@ const Translator = () => {
     }
     
     const convertToString = (htmlString) => {
-        const convertedString = htmlString.replace(/&amp;/g, '&')
+        return htmlString.replace(/&amp;/g, '&')
             .replace(/&lt;/g, '<')
             .replace(/&gt;/g, '>')
             .replace(/&quot;/g, '"')
             .replace(/&#39;/g, "'");
-        return convertedString;
     }
 
     return (
